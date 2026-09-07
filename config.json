@@ -1,0 +1,8 @@
+{
+  "allowed_root": "C:\\RansomwareLab",
+  "target_directory": "C:\\RansomwareLab\\TestData",
+  "synthetic_file_count": 30,
+  "simulated_extension": ".locked",
+  "delay_seconds": 0.05,
+  "log_file": "simulation.log"
+}
