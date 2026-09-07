@@ -1,0 +1,18 @@
+<!--
+Controlled lab Sysmon configuration.
+Review and validate the resulting events in the isolated Windows VM.
+-->
+<Sysmon schemaversion="4.90">
+  <HashAlgorithms>SHA256</HashAlgorithms>
+
+  <EventFiltering>
+    <ProcessCreate onmatch="include">
+      <Image condition="end with">\python.exe</Image>
+      <Image condition="end with">\pythonw.exe</Image>
+    </ProcessCreate>
+
+    <FileCreate onmatch="include">
+      <TargetFilename condition="contains">RansomwareLab</TargetFilename>
+    </FileCreate>
+  </EventFiltering>
+</Sysmon>
