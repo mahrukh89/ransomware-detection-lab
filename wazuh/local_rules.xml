@@ -1,0 +1,22 @@
+<!--
+Lab custom rules. These definitions are retained for detection-engineering work.
+The supplied screenshots do not prove that either custom rule fired; validate
+against the exact decoded events before deployment.
+-->
+<group name="ransomware_lab,windows,sysmon,">
+
+  <rule id="100100" level="10">
+    <if_group>sysmon_event</if_group>
+    <match>SIMULATED_RANSOM_NOTE.txt</match>
+    <description>Ransomware Lab: simulated ransom note created</description>
+    <group>ransomware_simulation,</group>
+  </rule>
+
+  <rule id="100101" level="8">
+    <if_group>sysmon_event</if_group>
+    <match>.locked</match>
+    <description>Ransomware Lab: suspicious simulated file extension observed</description>
+    <group>ransomware_simulation,</group>
+  </rule>
+
+</group>
